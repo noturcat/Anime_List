@@ -1,0 +1,557 @@
+$main-color : #ECC8C2 ;
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #565EA2;
+}
+
+h1{
+    color: #E6DEEA;
+}
+a{
+    text-decoration: none;
+    color: #3C3461;
+}
+.icon-btn {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ECC8C2   ;
+    background: #ECC8C2;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    transition: width 0.2s ease-in-out;
+    font-weight: 500;
+    font-family: inherit;
+    color: #3C3461;
+}
+
+.add-btn:hover {
+    width: 120px;
+}
+
+.add-btn::before,
+.add-btn::after {
+    transition: width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: 10px;
+    top: calc(50% - 2px);
+    background: #3C3461;
+}
+
+.add-btn::after {
+    right: 14px;
+    overflow: hidden;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.add-btn::before {
+    left: 14px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.icon-btn:focus {
+    outline: none;
+}
+
+.btn-txt {
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+.add-btn:hover::before,
+.add-btn:hover::after {
+    width: 4px;
+    border-radius: 2px;
+}
+.add-btn:hover .btn-txt {
+    opacity: 1;
+}
+.add-icon::after,
+.add-icon::before {
+    transition: all 0.2s ease-in-out;
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 2px;
+    top: calc(50% - 10px);
+    background: #3C3461;
+    overflow: hidden;
+}
+.add-icon::before {
+    left: 22px;
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+.add-icon::after {
+    right: 22px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.add-btn:hover .add-icon::before {
+    left: 15px;
+    height: 4px;
+    top: calc(50% - 2px);
+}
+
+.add-btn:hover .add-icon::after {
+    right: 15px;
+    height: 4px;
+    top: calc(50% - 2px);
+}
+//
+
+//
+
+.card {
+    position: relative;
+    min-width: 250px;
+    width: 250px;
+    height: 350px;
+    color: #2e2d31;
+    background: #E6DEEA;
+    overflow: hidden;
+    border-radius: 20px;
+    
+}
+
+.temporary_text {
+    font-weight: bold;
+    font-size: 24px;
+    padding: 6px 12px;
+    color: #f8f8f8;
+}
+
+.card_title {
+    font-weight: bold;
+}
+
+.card_content {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    /* edit the width to fit card */
+    width: 100%;
+    padding: 20px;
+    background: #E6DEEA;
+    border-top-left-radius: 20px;
+    /* edit here to change the height of the content box */
+    transform: translateY(150px);
+    transition: transform .25s;
+}
+
+.card_content::before {
+    content: '';
+    position: absolute;
+    top: -47px;
+    right: -45px;
+    width: 100px;
+    height: 100px;
+    transform: rotate(-175deg);
+    border-radius: 50%;
+    box-shadow: inset 48px 48px #ECC8C2;
+}
+
+.card_title {
+    color: #131313;
+    line-height: 15px;
+}
+
+.card_subtitle {
+    display: block;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.card_description {
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity .5s;
+}
+
+.card:hover .card_content {
+    transform: translateY(0);
+}
+
+.card:hover .card_description {
+    opacity: 1;
+    transition-delay: .25s;
+}
+
+
+//modal text
+// .edit-modal{
+    
+// }
+
+.modal-header {
+    background-color: #565EA2;
+    color: $main-color;
+}
+
+.input-group {
+    position: relative;
+    margin: 10px;
+}
+
+.input {
+    border: solid 1.5px #9e9e9e;
+    border-radius: 1rem;
+    background: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    color: #120D1D;
+    transition: border 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    width: 300px;
+
+}
+
+.user-label {
+    position: absolute;
+    left: 15px;
+    color: #120D1D;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.input:focus,
+input:valid {
+    outline: none;
+    border: 1.5px solid #3C3461;
+}
+
+.input:focus~label,
+input:valid~label {
+    transform: translateY(-50%) scale(0.8);
+    background-color: #f8f8f8;
+    padding: 0 .2em;
+    color: #3C3461;
+}
+
+
+
+//input file
+.form {
+    background-color: #fff;
+    box-shadow: 0 10px 60px rgb(218, 229, 255);
+    border: 1px solid rgb(159, 159, 160);
+    border-radius: 20px;
+    padding: 2rem .7rem .7rem .7rem;
+    text-align: center;
+    font-size: 1.125rem;
+    max-width: 320px;
+}
+
+
+
+.drop-container {
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin-top: 2.1875rem;
+    border-radius: 10px;
+    border: 2px dashed rgb(171, 202, 255);
+    color: #444;
+    cursor: pointer;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+}
+
+.drop-container:hover {
+    background: rgba(0, 140, 255, 0.164);
+    border-color: rgba(17, 17, 17, 0.616);
+}
+
+.drop-container:hover .drop-title {
+    color: #222;
+}
+
+.drop-title {
+    color: #444;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    transition: color .2s ease-in-out;
+}
+
+#file-input {
+    width: 350px;
+    max-width: 100%;
+    color: #444;
+    padding: 2px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid rgba(8, 8, 8, 0.288);
+}
+
+#file-input::file-selector-button {
+    margin-right: 20px;
+    border: none;
+    background: #084cdf;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+    transition: background .2s ease-in-out;
+}
+
+#file-input::file-selector-button:hover {
+    background: #0d45a5;
+}
+
+.sidebar {
+    // 
+    height: 100%;
+    width: 260px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #ECC8C2;
+    overflow-x: hidden;
+    // word-break: break-all;
+}
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+.sidebar {
+    scrollbar-width: auto;
+    scrollbar-color: #3c3461 #ecc8c2;
+}
+
+/* Chrome, Edge, and Safari */
+.sidebar::-webkit-scrollbar {
+    width: 12px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: #ecc8c2;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: #3c3461;
+    border-radius: 12px;
+    border: 1px solid #3c3461;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #ecc8c2 #565ea2;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #565ea2;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #ecc8c2;
+    border-radius: 12px;
+    border: 1px solid #ecc8c2;
+}
+
+.dropdown button{
+    background-color: #ECC8C2;
+}
+
+.dropdown button::hover {
+    background-color: #ECC8C2 ;
+}
+
+.heart{
+    z-index: 1;
+    .container input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+            
+        }
+    
+        .container {
+            display: block;
+            position: relative;
+            cursor: pointer;
+            font-size: 20px;
+            user-select: none;
+            transition: 100ms;
+            
+        }
+    
+        .checkmark {
+            top: 0;
+            left: 0;
+            height: 1.5em;
+            width: 1.5em;
+            transition: 100ms;
+            animation: dislike_effect 400ms ease;
+            
+        }
+        
+    
+        .container input:checked~.checkmark path {
+            fill: #FF5353;
+            stroke-width: 0;
+            
+        }
+    
+        .container input:checked~.checkmark {
+            animation: like_effect 400ms ease;
+        }
+    
+        .container:hover {
+            transform: scale(1.5);
+        }
+    
+        @keyframes like_effect {
+            0% {
+                transform: scale(0);
+            }
+    
+            50% {
+                transform: scale(1.2);
+            }
+    
+            100% {
+                transform: scale(1);
+            }
+        }
+    
+        @keyframes dislike_effect {
+            0% {
+                transform: scale(0);
+            }
+    
+            50% {
+                transform: scale(1.2);
+            }
+    
+            100% {
+                transform: scale(1);
+            }
+        }
+}
+
+
+@media only screen and (max-width: 1200px) {
+    .sidebar {
+        visibility: hidden;
+    }
+    
+}
+@media only screen and (min-width: 1200px) {
+    
+    // .container {
+    //     margin-left: 295px;
+    // }
+
+}
+
+
+
+
+
+// @media only screen and (max-width: 1600px) {
+//     .container {
+//         margin-left: 260px;
+//         // visibility: hidden;
+//     }
+// }
+// @media only screen and (min-width: 1600px) {
+//     .container {
+//         margin-left: 260px;
+//         // visibility: hidden;
+//     }
+// }
+.header{
+    // background-color: black;
+    // height: 100px;
+    button {
+            border: none;
+            display: block;
+            position: relative;
+            padding: 0.5em 2.4em;
+            font-size: 18px;
+            background: transparent;
+            cursor: pointer;
+            user-select: none;
+            overflow: hidden;
+            color: #ECC8C2;
+            z-index: 1;
+            font-family: inherit;
+            font-weight: 500;
+        }
+        
+        button span {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: -1;
+            border: 4px solid #ECC8C2;
+        }
+    
+        button span::before {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 8%;
+            height: 500%;
+            background: var(--lightgray);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-60deg);
+            transition: all 0.3s;
+        }
+    
+        button:hover span::before {
+            transform: translate(-50%, -50%) rotate(-90deg);
+            width: 100%;
+            background: #ECC8C2;
+        }
+    
+        button:hover {
+            color: #3C3461;
+        }
+    
+        button:active span::before {
+            background: #ECC8C2;
+        }
+}
+.search{
+    .input {
+            border: none;
+            padding: 1rem;
+            border-radius: 1rem;
+            background: #e8e8e8;
+            box-shadow: inset 10px 10px 20px #c5c5c5,
+                    inset -10px -10px 20px #ffffff;
+            transition: 0.3s;
+        }
+    
+        .input:focus {
+            outline-color: #e8e8e8;
+            background: #e8e8e8;
+            box-shadow: inset 10px 10px 20px #c5c5c5,
+                inset -10px -10px 20px #ffffff;
+            transition: 0.3s;
+        }
+}
